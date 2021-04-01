@@ -1,0 +1,24 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>381 Youtube Search</title>
+</head>
+
+<body>
+    <p>Query</p>
+
+    {% if data is defined %}
+        <ol>
+            {% for item in data %}
+           	 <li>{{item['snippet']['title']}}
+           	 <br />{{item['snippet']['description']}}
+           	 <br /><a href="https://www.youtube.com/watch?v={{item['id']['videoId']}}">Link</a></li>
+            {% endfor %}
+    {% else %}
+            <p>No search results</p>
+            {% endif %}
+        </ol>
+</body>
+</html>
