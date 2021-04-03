@@ -1,4 +1,4 @@
 
 
-api_key ='AIzaSyCpalhlKaYldIX0hsU4F6kje9ljrqlCCPQ'
-cse_id = '88661aafd87ebb6f2'
+api_key ='<Google_Api_Key>'
+cse_id = '<CSE_Id>'
