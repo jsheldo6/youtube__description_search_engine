@@ -15,7 +15,7 @@ def index(): #method name doesnt matter to flask
 #100.25.129.237
 @app.route("/query")
 def query():
-    arg = "eastern"
+    arg = request.args.get('q')
     if not arg or not arg.strip():
         return render_template("query.html")
 
