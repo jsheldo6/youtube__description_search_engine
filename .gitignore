@@ -1,9 +1,8 @@
 flaskr/*.json
 flaskr/config.py
 flaskr/whoosh_index_*
-
+flaskr/__pycache__/*
 # Byte-compiled / optimized / DLL files
-__pycache__/*
 __pycache__/
 *.py[cod]
 *$py.class
