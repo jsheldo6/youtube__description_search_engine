@@ -3,6 +3,7 @@ flaskr/config.py
 flaskr/whoosh_index_*
 
 # Byte-compiled / optimized / DLL files
+__pycache__/*
 __pycache__/
 *.py[cod]
 *$py.class
