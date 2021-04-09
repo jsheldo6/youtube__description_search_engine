@@ -1,10 +1,8 @@
 flaskr/*.json
 flaskr/config.py
 flaskr/whoosh_index_*
-flaskr/__pycache__/app.cpython-37.pyc
-flaskr/__pycache__/config.cpython-37.pyc
-flaskr/__pycache__/youtube.cpython-37.pyc
-
+flaskr/whoosh_index*
+flaskr/__pycache__/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
