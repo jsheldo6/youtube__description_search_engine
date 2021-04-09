@@ -21,9 +21,9 @@ def create_woosh_index(video_list, index_name):
 
     for video_item in video_list:
         video_id = video_item['id']
-        vide_title = video_item['snippet']['title']
+        video_title = video_item['snippet']['title']
         video_description = video_item['snippet']['description']
-        writer.add_document(id=video_id, title=video_title,description = video_description)
+        writer.add_document(id=video_id, title=video_title, description=video_description)
 
     writer.commit()
 
@@ -35,14 +35,15 @@ def query_on_whoosh(index_name, query_str):
         query = QueryParser("description", index.schema).parse(query_str)
         results = searcher.search(query,limit=None)
 
-        formtatted_results = []
+        formatted_results = []
         for result in results:
             d = {}
             d['url'] ="https://www.youtube.com/watch?v=" + result['id']
             d['snippet'] = {}
             d['snippet']['title'] = result['title']
             d['snippet']['description'] = result.highlights('description')
-            d['id']['videoId'] = results['id']
+            d['id']={}
+            d['id']['videoId'] = result['id']
             d['score'] = result.score
             formatted_results.append(d)
 
