@@ -8,15 +8,15 @@
 
 <body>
   <form action="/query?q={{ query_term }}" method="POST">
-      <input name = "description_search" placeholder="search..." type = "text" value ="">
-      <input type = "submit" value="search">
+      <input name ="description_search" placeholder="search..." type = "text" value ="">
+      <input name ="search_button" type="submit" value="search">
     </form>
     <p>Query</p>
 
     {% if data is defined %}
         <ol>
             {% for item in data %}
-           	 <li>{{item['snippet']['title']}}
+           	 <li class="youtube-video">{{item['snippet']['title']}}
            	 <br /><span></span>{{item['snippet']['description'] | safe}}</span>
            	 <br /><a href="https://www.youtube.com/watch?v={{item['id']['videoId']}}">Link</a></li>
             {% endfor %}
