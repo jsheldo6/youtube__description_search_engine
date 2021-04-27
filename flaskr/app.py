@@ -35,13 +35,13 @@ def spotify():
         return render_template("music.html")
   
     index_name = "whoosh_index" + arg
-
+    Spotify = "spotify"
     if request.method=='GET':
         results = search(arg,1)
         create_woosh_index(results, index_name)
         return render_template("music.html", query_term=arg, data=results)
     
     if request.method =='POST':
-        search_term = "Spotify"#request.form['description_search']
-        results = query_on_whoosh(index_name, search_term)
+        search_term = request.form['description_search']
+        results = query_on_whoosh(Spotify, search_term)
         return render_template("music.html", query_term=arg, data=results)
