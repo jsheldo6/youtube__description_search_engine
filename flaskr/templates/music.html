@@ -8,20 +8,16 @@
 
 <body>
   <h1>Music Results:</h1>
+  
   <a href="/">Back to home</a>
-  <form action="/music?q={{ query_term }}" method="POST">
-    <input name ="description_search" placeholder="search..." type = "text" value ="">
-    <input name ="search_button" type="submit" value="search">
-  </form>
-    <a href="index.html"></a>
-    <input type="checkbox" id="check" name="CheckBox" value="no">
-    <img id='box-feed' src='' v-bind:class='robot.rFeedBack' v-bind:style='{display: nextVisibility}'/>
+    <br />
     {% if data is defined %}
-        <a href="">Show all results</a>
+        <br />
+        <a href="/music?q={{ query_term }}">Show all results</a>
         <ol>
             {% for item in data %}
            	 <li class="youtube-video">{{item['snippet']['title']}}
- 
+
            	 <br /><span></span>{{item['snippet']['description'] | safe}}</span>
              <br /><iframe width="560" height="315" src="https://www.youtube.com/embed/{{item['id']['videoId']}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
            	 <br /><a href="https://www.youtube.com/watch?v={{item['id']['videoId']}}">Link</a>
