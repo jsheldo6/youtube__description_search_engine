@@ -38,6 +38,7 @@ def query_on_whoosh(index_name, query_str):
         formatted_results = []
         for result in results:
             d = {}
+            d['url'] ="https://www.youtube.com/embed/" + result['id']
             d['url'] ="https://www.youtube.com/watch?v=" + result['id']
             d['snippet'] = {}
             d['snippet']['title'] = result['title']
