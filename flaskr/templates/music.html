@@ -3,18 +3,19 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Youtube Search Results</title>
+  <title>Youtube Music Search Results</title>
 </head>
 
 <body>
-  <h1>Results:</h1>
+  <h1>Music Results:</h1>
   <a href="/">Back to home</a>
-  <form action="/music?q={{ spotify }}" method="POST">
-      <input name ="description_search" placeholder="search..." type = "text" value ="">
-      <input name ="search_button" type="submit" value="search">
-    </form>
+  <form action="/query?q={{ query_term }}" method="POST">
+    <input name ="description_search" placeholder="search..." type = "text" value ="">
+    <input name ="search_button" type="submit" value="search">
+  </form>
     <a href="index.html"></a>
-    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+    <input type="checkbox" id="check" name="CheckBox" value="no">
+    <img id='box-feed' src='' v-bind:class='robot.rFeedBack' v-bind:style='{display: nextVisibility}'/>
     {% if data is defined %}
         <a href="">Show all results</a>
         <ol>
